@@ -59,7 +59,7 @@ epsilon = Body(EPSILON_MASS, EPSILON_RADIUS,
                unmovable=False, invincible=False)
 
 # Creating System
-system = System([alpha, beta, gamma, delta, epsilon], SCALE, BIG_G)
+system = System([alpha, beta, gamma, delta, epsilon])
 
 # Visualizing System
 application = SystemVisualizer(system)
