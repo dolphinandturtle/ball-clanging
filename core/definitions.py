@@ -1,5 +1,10 @@
 import pygame as pg
 
+
+# Presets
+
+BODY_DEFAULT = ("Generic", BLACK, 100, 10, [[0, 0], [0, 0], [0, 0]], False)
+
 pg.init()
 pg.font.init()
 pg.display.set_caption("Ball Clanging")
