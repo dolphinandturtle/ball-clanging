@@ -22,8 +22,8 @@ class System:
         total_mass, weighted_x, weighted_y = 0.0, 0.0, 0.0
         for body in self.bodies:
             total_mass += body.mass
-            weighted_x += body.motion[POSITION][X]*body.mass
-            weighted_y += body.motion[POSITION][Y]*body.mass
+            weighted_x += body.spacial[POSITION][X]*body.mass
+            weighted_y += body.spacial[POSITION][Y]*body.mass
         center_of_mass_x = weighted_x / total_mass
         center_of_mass_y = weighted_y / total_mass
         self.center_of_mass = [center_of_mass_x, center_of_mass_y]

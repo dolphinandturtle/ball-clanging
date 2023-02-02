@@ -22,22 +22,23 @@ class Controls:
         self.super_controls()
 
     def gui_controls(self, event=None):
-        if event and self.event.type == pg.KEYDOWN:
-            if self.event.key == pg.K_g:
+        if event and event.type == pg.KEYDOWN:
+            if event.key == pg.K_g:
                 self.host.show_gui = not self.host.show_gui
-            if self.event.key == pg.K_b:
+            if event.key == pg.K_b:
                 self.host.show_bodies = not self.host.show_bodies
-            if self.event.key == pg.K_n:
+            if event.key == pg.K_n:
                 self.host.show_names = not self.host.show_names
-            if self.event.key == pg.K_c:
+            if event.key == pg.K_c:
                 self.host.show_coordinates = not self.host.show_coordinates
-            if self.event.key == pg.K_t:
+            if event.key == pg.K_t:
                 self.host.show_trajectory = not self.host.show_trajectory
             return None
 
     def camera_controls(self, event=None):
-        if event and event.key == pg.K_f:
-            self.host.focus += 1
+        if event and event.type == pg.KEYDOWN:
+            if event and event.key == pg.K_f:
+                self.host.focus += 1
             if self.host.focus == len(self.system.bodies):
                 self.host.focus = -1
             return None
