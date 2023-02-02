@@ -4,6 +4,8 @@ from core.definitions.display import *
 from core.definitions.defaults import *
 from core.camera import *
 
+X, Y = 0, 1
+POSITION, VELOCITY, ACCELERATION = 0, 1, 2
 
 class Graphics:
 
@@ -21,8 +23,15 @@ class Graphics:
         self.draw_gui()
 
     def draw_bodies(self):
-        for bodies in self.system.bodies:
-            pass
+        for body in self.system.bodies:
+            x = body.spacial[POSITION][X]
+            y = body.spacial[POSITION][Y]
+            radius = body.radius
+            color = body.color
+            if body.color:
+                position = self.camera.relative_to_camera(x, y, 0, 0)
+                radius = radius*(WIN_WIDTH/self.camera.width)
+                pg.draw.circle(self.screen, color, position, radius)
 
     def draw_gui(self):
         pass

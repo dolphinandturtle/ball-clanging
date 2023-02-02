@@ -1,4 +1,4 @@
-from core.definitions import *
+from core.definitions.display import *
 
 
 class Camera:

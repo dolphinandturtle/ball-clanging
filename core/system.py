@@ -16,6 +16,7 @@ class System:
     def update(self):
         for body in self.bodies:
             body.interact(self.bodies)
+            body.move(1)
         self.calculate_center_of_mass()
 
     def calculate_center_of_mass(self):
