@@ -16,7 +16,7 @@ class Body:
         self.radius = radius
         self.spacial = spacial
         self.is_frozen = is_frozen
-        self.__trajectory = []
+        self.__trajectory = [self.spacial[POSITION][:]]
         # Work in progress
         self.elasticity = 1.0  # Normalized value
 
@@ -31,7 +31,7 @@ class Body:
                 relative_degree = _degree - degree
                 self.spacial[degree][X] += primitive(_const[X], relative_degree)
                 self.spacial[degree][Y] += primitive(_const[Y], relative_degree)
-        self.__trajectory.append(self.spacial[POSITION])
+        self.__trajectory.append(self.spacial[POSITION][:])
         if len(self.__trajectory) > TRAJECTORY_LENGHT:
             self.__trajectory.pop(0)
 

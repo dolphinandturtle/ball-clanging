@@ -23,4 +23,4 @@ class Visualizer:
             self.controls.listen()
             self.graphics.draw()
             self.system.update()
-            pg.display.flip()
+            pg.display.update()
